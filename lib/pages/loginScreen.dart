@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -100,16 +101,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              MaterialButton(
-                padding: EdgeInsets.zero,
-                onPressed: () => signInWithGoogle(),
-
-                child: Icon(Icons.account_tree),
+              SignInButton(
+                  Buttons.GoogleDark,
+                  onPressed: (){
+                      signInWithGoogle();
+                  },
+                ),
                 // child: Image(
                 //   image: AssetImage('assets/고화질 대문자.png'),
                 //   width: 200.0,
                 // ),
-              ),
+
               SizedBox(
                 height: 10.0,
               ),
